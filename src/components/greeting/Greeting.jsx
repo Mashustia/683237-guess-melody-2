@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Greeting = () => {
+export const Greeting = (props) => {
+  const {errorsQuantity, time} = props;
+
   return (
     <div id='welcome'>
       <section className='welcome'>
@@ -11,13 +14,18 @@ export const Greeting = () => {
         <h2 className='welcome__rules-title'>Правила игры</h2>
         <p className='welcome__text'>Правила просты:</p>
         <ul className='welcome__rules-list'>
-          <li>За 5 минут нужно ответить на все вопросы.</li>
-          <li>Можно допустить 3 ошибки.</li>
+          <li>За {time} минут нужно ответить на все вопросы.</li>
+          <li>Можно допустить {errorsQuantity} ошибки.</li>
         </ul>
         <p className='welcome__text'>Удачи!</p>
       </section>
     </div>
   );
+};
+
+Greeting.propTypes = {
+  errorsQuantity: PropTypes.number.isRequired,
+  time: PropTypes.number.isRequired
 };
 
 export default Greeting;

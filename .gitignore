@@ -16,4 +16,4 @@ build/
 
 # bundle indexation cancel
 public/bundle.js
-public/bundle.js.map.
+public/bundle.js.map

@@ -6,6 +6,7 @@ export const App = () => {
   return <Greeting
     time={5}
     errorsQuantity={3}
+    onStart={()=>{}}
   />;
 };
 

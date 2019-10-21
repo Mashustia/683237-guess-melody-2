@@ -16,7 +16,7 @@ it(`Handler is called by click on button`, () => {
       />
   );
 
-  const startButton = greeting.find(`button`);
+  const startButton = greeting.find(`.welcome__button`);
 
   startButton.simulate(`click`, {preventDefault});
   expect(preventDefault).toHaveBeenCalledTimes(1);

@@ -50,7 +50,14 @@ export const GuessArtist = (props) => {
         </div>
 
         <form className='game__artist'>
-          {variants.map((artist) => <Artist key={artist.artist} name={artist.artist} picture={artist.picture} onChoose={onAnswer}/>)}
+          {variants.map((artist) =>
+            <Artist
+              key={artist.artist}
+              name={artist.artist}
+              picture={artist.picture}
+              id={artist.id}
+              onChoose={onAnswer}
+            />)}
         </form>
       </section>
     </section>
@@ -62,7 +69,8 @@ GuessArtist.propTypes = {
   question: PropTypes.shape({
     variants: PropTypes.arrayOf(PropTypes.shape({
       artist: PropTypes.string,
-      picture: PropTypes.string
+      picture: PropTypes.string,
+      id: PropTypes.number
     }))
   })
 };

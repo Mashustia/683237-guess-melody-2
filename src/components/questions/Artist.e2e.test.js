@@ -14,6 +14,7 @@ it(`Handler returned string`, () => {
       <Artist
         name={``}
         picture={``}
+        id={0}
         onChoose={returnString}
       />
   );

@@ -6,21 +6,21 @@ exports[`Artist component renders correctly 1`] = `
 >
   <input
     className="artist__input visually-hidden"
-    id="answer-2"
+    id="artist-0"
     name="answer"
     type="radio"
-    value="artist-2"
+    value="artist-0"
   />
   <label
     className="artist__name"
-    htmlFor="answer-2"
+    htmlFor="artist-0"
   >
     <img
-      alt="Пелагея"
+      alt="name"
       className="artist__picture"
-      src=""
+      src="picture"
     />
-    
+    name
   </label>
 </div>
 `;

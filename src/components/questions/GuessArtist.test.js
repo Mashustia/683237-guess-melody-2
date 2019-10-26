@@ -7,12 +7,13 @@ it(`GuessArtist component renders correctly`, () => {
   const component = renderer
     .create(<GuessArtist
       question={{
-        question: ``,
-        answer: ``,
+        question: `test`,
+        answer: `test`,
         variants: [
           {
-            picture: ``,
-            artist: ``,
+            picture: `test`,
+            artist: `test`,
+            id: 0
           }
         ]
       }}

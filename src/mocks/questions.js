@@ -8,14 +8,17 @@ export const MockData = {
       variants: [{
         picture: `http://placehold.it/134x134`,
         artist: `John Snow`,
+        id: 1
       },
       {
         picture: `http://placehold.it/134x134`,
         artist: `Rammstein`,
+        id: 2
       },
       {
         picture: `http://placehold.it/134x134`,
         artist: `Jim Beam`,
+        id: 3
       }]
     },
     {

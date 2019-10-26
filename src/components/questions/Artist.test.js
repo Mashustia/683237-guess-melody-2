@@ -5,7 +5,7 @@ import Artist from './Artist';
 
 it(`Artist component renders correctly`, () => {
   const component = renderer
-    .create(<Artist name={``} picture={``} onChoose={jest.fn()} />)
+    .create(<Artist name={`name`} picture={`picture`} id={0} onChoose={jest.fn()} />)
     .toJSON();
   expect(component).toMatchSnapshot();
 });

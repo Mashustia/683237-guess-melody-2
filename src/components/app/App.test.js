@@ -4,7 +4,13 @@ import App from './App';
 
 it(`App component renders correctly`, () => {
   const component = renderer
-    .create(<App />)
+    .create(<App
+      data={{
+        time: 0,
+        mistakes: 0,
+        questions: []
+      }}
+    />)
     .toJSON();
   expect(component).toMatchSnapshot();
 });

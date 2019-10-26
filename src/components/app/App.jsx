@@ -25,19 +25,20 @@ export class App extends Component {
     this.onStart = this.onStart.bind(this);
   }
 
-  onStart(e) {
-    e.preventDefault();
-    const {questions} = this.props.data;
-    const newQuestionsCount = this.state.questionsCount + 1;
+  onStart() {
+    return () => {
+      const {questions} = this.props.data;
+      const newQuestionsCount = this.state.questionsCount + 1;
 
-    if (questions.length === newQuestionsCount) {
-      return this.setState(Object.assign({}, initialState));
-    }
+      if (questions.length === newQuestionsCount) {
+        return this.setState(Object.assign({}, initialState));
+      }
 
-    return this.setState({
-      screen: questions[newQuestionsCount].question,
-      questionsCount: newQuestionsCount
-    });
+      return this.setState({
+        screen: questions[newQuestionsCount].question,
+        questionsCount: newQuestionsCount
+      });
+    };
   }
 
   render() {

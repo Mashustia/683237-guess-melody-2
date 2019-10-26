@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Artist from './Artist';
+
 export const GuessArtist = (props) => {
   const {variants} = props.question;
   const {onAnswer} = props;
@@ -48,29 +50,7 @@ export const GuessArtist = (props) => {
         </div>
 
         <form className='game__artist'>
-          <div className='artist'>
-            <input className='artist__input visually-hidden' type='radio' name='answer' value='artist-1' id='answer-1' />
-            <label className='artist__name' htmlFor='answer-1' onClick={onAnswer(variants[0].artist)}>
-              <img className='artist__picture' src='http://placehold.it/134x134' alt='Пелагея' />
-              {variants[0].artist}
-            </label>
-          </div>
-
-          <div className='artist'>
-            <input className='artist__input visually-hidden' type='radio' name='answer' value='artist-2' id='answer-2' />
-            <label className='artist__name' htmlFor='answer-2' onClick={onAnswer(variants[1].artist)}>
-              <img className='artist__picture' src='http://placehold.it/134x134' alt='Пелагея' />
-              {variants[1].artist}
-            </label>
-          </div>
-
-          <div className='artist'>
-            <input className='artist__input visually-hidden' type='radio' name='answer' value='artist-3' id='answer-3' />
-            <label className='artist__name' htmlFor='answer-3' onClick={onAnswer(variants[2].artist)}>
-              <img className='artist__picture' src='http://placehold.it/134x134' alt='Пелагея' />
-              {variants[2].artist}
-            </label>
-          </div>
+          {variants.map((artist) => <Artist key={artist.artist} name={artist.artist} picture={artist.picture} onChoose={onAnswer}/>)}
         </form>
       </section>
     </section>

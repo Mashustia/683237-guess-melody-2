@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artist component renders correctly 1`] = `
+<div
+  className="artist"
+>
+  <input
+    className="artist__input visually-hidden"
+    id="answer-2"
+    name="answer"
+    type="radio"
+    value="artist-2"
+  />
+  <label
+    className="artist__name"
+    htmlFor="answer-2"
+  >
+    <img
+      alt="Пелагея"
+      className="artist__picture"
+      src=""
+    />
+    
+  </label>
+</div>
+`;

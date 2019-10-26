@@ -76,7 +76,8 @@ App.propTypes = {
         src: PropTypes.string,
         artist: PropTypes.string,
         picture: PropTypes.string,
-        genre: PropTypes.string
+        genre: PropTypes.string,
+        id: PropTypes.number
       }))
     }))
   }),

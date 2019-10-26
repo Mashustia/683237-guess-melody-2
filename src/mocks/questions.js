@@ -1,4 +1,4 @@
-export const mockData = {
+export const MockData = {
   time: 5,
   mistakes: 3,
   questions: [

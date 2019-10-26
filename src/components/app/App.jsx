@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Greeting from '../greeting/Greeting';
-import GuessArtist from '../qustions/GuessArtist';
-import GuessGenre from '../qustions/GuessGenre';
+import GuessArtist from '../questions/GuessArtist';
+import GuessGenre from '../questions/GuessGenre';
 
 const screenTypes = {
   welcomeScreen: `welcomeScreen`,

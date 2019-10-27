@@ -13,6 +13,8 @@ it(`Handler returned string`, () => {
   const track = shallow(
       <Track
         id={0}
+        value={0}
+        checked={true}
         onChoose={returnString}
       />
   );

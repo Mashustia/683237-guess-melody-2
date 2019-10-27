@@ -5,7 +5,13 @@ import Track from './Track';
 
 it(`Track component renders correctly`, () => {
   const component = renderer
-    .create(<Track id={0} onChoose={jest.fn()} />)
+    .create(
+        <Track
+          id={0}
+          value={0}
+          checked={true}
+          onChoose={jest.fn()}
+        />)
     .toJSON();
   expect(component).toMatchSnapshot();
 });

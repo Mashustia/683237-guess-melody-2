@@ -17,12 +17,13 @@ exports[`Track component renders correctly 1`] = `
     className="game__answer"
   >
     <input
-      checked={false}
+      checked={true}
       className="game__input visually-hidden"
       id="answer-0"
       name="answer"
-      onChange={[Function]}
+      onChange={[MockFunction]}
       type="checkbox"
+      value={0}
     />
     <label
       className="game__check"

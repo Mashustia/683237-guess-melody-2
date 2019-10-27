@@ -1,22 +1,47 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export const Track = (props) => {
-  const {onChoose, id} = props;
+export class Track extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className='track'>
-      <button className='track__button track__button--play' type='button'/>
-      <div className='track__status'>
-        <audio/>
+    this.state = {
+      checked: false
+    };
+
+    this.onChangeValue = this.onChangeValue.bind(this);
+  }
+
+  onChangeValue() {
+    this.setState({
+      checked: !this.state.checked
+    }, () => this.props.onChoose(this.props.id));
+  }
+
+  render() {
+    const {id} = this.props;
+
+    return (
+      <div className='track'>
+        <button className='track__button track__button--play' type='button'/>
+        <div className='track__status'>
+          <audio/>
+        </div>
+        <div className='game__answer'>
+          <input
+            className='game__input visually-hidden'
+            type='checkbox'
+            name='answer'
+            checked={this.state.checked}
+            id={`answer-${id}`}
+            onChange={this.onChangeValue}
+          />
+          <label className='game__check' htmlFor={`answer-${id}`}>Отметить</label>
+        </div>
       </div>
-      <div className='game__answer'>
-        <input className='game__input visually-hidden' type='checkbox' name='answer' value={`answer-${id}`} id={`answer-${id}`} />
-        <label className='game__check' htmlFor={`answer-${id}`} onClick={onChoose}>Отметить</label>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 Track.propTypes = {
   onChoose: PropTypes.func.isRequired,

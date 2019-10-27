@@ -17,8 +17,8 @@ it(`Handler returned string`, () => {
       />
   );
 
-  const label = track.find(`.game__check`);
+  const input = track.find(`.game__input`);
 
-  label.simulate(`click`, returnString(testString));
+  input.simulate(`change`, returnString(testString));
   expect(returnString).toHaveBeenCalledWith(testString);
 });

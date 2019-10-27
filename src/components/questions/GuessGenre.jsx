@@ -10,6 +10,8 @@ export class GuessGenre extends Component {
     this.state = {
       chosenTracks: []
     };
+
+    this.onChoose = this.onChoose.bind(this);
   }
 
   onChoose(id) {
@@ -64,7 +66,7 @@ export class GuessGenre extends Component {
         <section className='game__screen'>
           <h2 className='game__title'>Выберите инди-рок треки</h2>
           <form className='game__tracks'>
-            {variants.map((song, index) => <Track key={index} id={song.id} onChoose={() => this.onChoose(song.id)}/>)}
+            {variants.map((song, index) => <Track key={index} id={song.id} onChoose={this.onChoose}/>)}
 
             <button className='game__submit button' type='submit' onClick={onAnswer(this.state.chosenTracks)}>Ответить</button>
           </form>

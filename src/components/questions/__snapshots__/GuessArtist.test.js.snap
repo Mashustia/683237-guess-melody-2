@@ -107,11 +107,13 @@ exports[`GuessArtist component renders correctly 1`] = `
         className="artist"
       >
         <input
+          checked={false}
           className="artist__input visually-hidden"
           id="artist-0"
           name="answer"
+          onChange={[Function]}
           type="radio"
-          value="artist-0"
+          value={0}
         />
         <label
           className="artist__name"

@@ -5,11 +5,13 @@ exports[`Artist component renders correctly 1`] = `
   className="artist"
 >
   <input
+    checked={true}
     className="artist__input visually-hidden"
     id="artist-0"
     name="answer"
+    onChange={[MockFunction]}
     type="radio"
-    value="artist-0"
+    value={0}
   />
   <label
     className="artist__name"

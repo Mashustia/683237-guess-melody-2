@@ -15,7 +15,8 @@ it(`Handler returned string`, () => {
         name={``}
         picture={``}
         id={0}
-        onChoose={returnString}
+        checked={false}
+        onChange={returnString}
       />
   );
 

@@ -107,7 +107,7 @@ exports[`GuessArtist component renders correctly 1`] = `
         className="artist"
       >
         <input
-          checked={false}
+          checked={true}
           className="artist__input visually-hidden"
           id="artist-0"
           name="answer"

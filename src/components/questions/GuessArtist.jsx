@@ -8,7 +8,7 @@ export class GuessArtist extends Component {
     super(props);
 
     this.state = {
-      chosenArtist: 1
+      chosenArtist: 0
     };
   }
 
@@ -18,7 +18,7 @@ export class GuessArtist extends Component {
         chosenArtist: id
       });
 
-      this.props.onAnswer(id);
+      this.props.onAnswer(id)();
     };
   }
 

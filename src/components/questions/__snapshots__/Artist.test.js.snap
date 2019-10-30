@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artist component renders correctly 1`] = `
+<div
+  className="artist"
+>
+  <input
+    checked={true}
+    className="artist__input visually-hidden"
+    id="artist-0"
+    name="answer"
+    onChange={[MockFunction]}
+    type="radio"
+    value={0}
+  />
+  <label
+    className="artist__name"
+    htmlFor="artist-0"
+  >
+    <img
+      alt="name"
+      className="artist__picture"
+      src="picture"
+    />
+    name
+  </label>
+</div>
+`;

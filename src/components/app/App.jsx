@@ -69,17 +69,27 @@ App.propTypes = {
   data: PropTypes.exact({
     time: PropTypes.number.isRequired,
     mistakes: PropTypes.number.isRequired,
-    questions: PropTypes.arrayOf(PropTypes.exact({
-      question: PropTypes.string.isRequired,
-      answer: PropTypes.string.isRequired,
-      variants: PropTypes.arrayOf(PropTypes.shape({
-        src: PropTypes.string,
-        artist: PropTypes.string,
-        picture: PropTypes.string,
-        genre: PropTypes.string,
-        id: PropTypes.number
-      }))
-    }))
+    questions: PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.shape({
+        question: PropTypes.string.isRequired,
+        answer: PropTypes.string.isRequired,
+        src: PropTypes.string.isRequired,
+        variants: PropTypes.arrayOf(PropTypes.shape({
+          artist: PropTypes.string,
+          picture: PropTypes.string,
+          id: PropTypes.number.isRequired
+        }))
+      }),
+      PropTypes.shape({
+        question: PropTypes.string.isRequired,
+        answer: PropTypes.string.isRequired,
+        variants: PropTypes.arrayOf(PropTypes.shape({
+          src: PropTypes.string,
+          genre: PropTypes.string,
+          id: PropTypes.number.isRequired
+        }))
+      })
+    ]))
   }),
 };
 

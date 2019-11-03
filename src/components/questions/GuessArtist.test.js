@@ -7,8 +7,7 @@ it(`GuessArtist component renders correctly`, () => {
   const component = renderer
     .create(<GuessArtist
       question={{
-        question: `test`,
-        answer: `test`,
+        src: `test`,
         variants: [
           {
             picture: `test`,

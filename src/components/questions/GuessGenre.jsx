@@ -8,7 +8,8 @@ export class GuessGenre extends Component {
     super(props);
 
     this.state = {
-      chosenTracks: []
+      chosenTracks: [],
+      activeSong: -1
     };
   }
 
@@ -24,6 +25,12 @@ export class GuessGenre extends Component {
         chosenTracks: newTracks
       });
     }
+  }
+
+  onChangeActiveSong(id) {
+    return () => {
+      this.setState({activeSong: this.state.activeSong === id ? -1 : id}, () => console.log(this.state));
+    };
   }
 
   render() {
@@ -69,8 +76,11 @@ export class GuessGenre extends Component {
                 key={song.id}
                 value={song.id}
                 id={song.id}
+                src={song.src}
                 onChoose={() => this.onChoose(song.id)}
                 checked={this.state.chosenTracks.includes(song.id)}
+                isPlaying={this.state.activeSong === song.id}
+                onPlayButtonClick={this.onChangeActiveSong(song.id)}
               />)}
 
             <button

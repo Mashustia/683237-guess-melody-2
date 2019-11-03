@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Artist from './Artist';
+import AudioPlayer from '../AudioPlayer/AudioPlayer';
 
 export class GuessArtist extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      chosenArtist: 0
+      chosenArtist: 0,
+      isPlaying: false
     };
   }
 
@@ -33,6 +35,10 @@ export class GuessArtist extends Component {
         checked={this.state.chosenArtist === artist.id}
         onChange={this.onChoose(artist.id)}
       />);
+  }
+
+  onChangePlayingStatus() {
+    return () => this.setState({isPlaying: !this.state.isPlaying});
   }
 
   render() {
@@ -71,10 +77,11 @@ export class GuessArtist extends Component {
           <h2 className='game__title'>Кто исполняет эту песню?</h2>
           <div className='game__track'>
             <div className='track'>
-              <button className='track__button track__button--play' type='button' />
-              <div className='track__status'>
-                <audio />
-              </div>
+              <AudioPlayer
+                src={this.props.question.src}
+                onPlayButtonClick={this.onChangePlayingStatus()}
+                isPlaying={this.state.isPlaying}
+              />
             </div>
           </div>
 
@@ -90,6 +97,7 @@ export class GuessArtist extends Component {
 GuessArtist.propTypes = {
   onAnswer: PropTypes.func.isRequired,
   question: PropTypes.shape({
+    src: PropTypes.string,
     variants: PropTypes.arrayOf(PropTypes.shape({
       artist: PropTypes.string,
       picture: PropTypes.string,

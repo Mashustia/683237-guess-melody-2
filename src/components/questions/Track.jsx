@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import AudioPlayer from '../AudioPlayer/AudioPlayer';
+
 export const Track = (props) => {
-  const {id, checked, value, onChoose} = props;
+  const {id, checked, value, src, isPlaying, onChoose, onPlayButtonClick} = props;
 
   return (
     <div className='track'>
-      <button className='track__button track__button--play' type='button'/>
-      <div className='track__status'>
-        <audio/>
-      </div>
+      <AudioPlayer src={src} isPlaying={isPlaying} onPlayButtonClick={onPlayButtonClick}/>
+
       <div className='game__answer'>
         <input
           className='game__input visually-hidden'
@@ -29,8 +29,11 @@ export const Track = (props) => {
 Track.propTypes = {
   onChoose: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
+  src: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
-  checked: PropTypes.bool.isRequired
+  checked: PropTypes.bool.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
+  onPlayButtonClick: PropTypes.func.isRequired
 };
 
 export default Track;

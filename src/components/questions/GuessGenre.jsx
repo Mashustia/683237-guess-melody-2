@@ -29,7 +29,7 @@ export class GuessGenre extends Component {
 
   onChangeActiveSong(id) {
     return () => {
-      this.setState({activeSong: this.state.activeSong === id ? -1 : id}, () => console.log(this.state));
+      this.setState({activeSong: this.state.activeSong === id ? -1 : id});
     };
   }
 

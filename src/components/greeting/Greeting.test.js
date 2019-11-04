@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import Greeting from './Greeting';
 
 it(`Greeting component renders correctly`, () => {

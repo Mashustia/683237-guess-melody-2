@@ -15,7 +15,10 @@ it(`Handler returned string`, () => {
         id={0}
         value={0}
         checked={true}
+        isPlaying={false}
+        src={`abc`}
         onChoose={returnString}
+        onPlayButtonClick={jest.fn()}
       />
   );
 

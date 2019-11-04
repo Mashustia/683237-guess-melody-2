@@ -7,7 +7,7 @@ it(`GuessArtist component renders correctly`, () => {
   const component = renderer
     .create(<GuessArtist
       question={{
-        src: `test`,
+        src: `https://upload.wikimedia.org/wikipedia/en/2/2d/Champions_League_anthem.ogg`,
         variants: [
           {
             picture: `test`,

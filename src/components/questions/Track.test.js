@@ -7,10 +7,13 @@ it(`Track component renders correctly`, () => {
   const component = renderer
     .create(
         <Track
-          id={0}
-          value={0}
+          id={1}
+          value={1}
           checked={true}
+          isPlaying={true}
+          src={`abc`}
           onChoose={jest.fn()}
+          onPlayButtonClick={jest.fn()}
         />)
     .toJSON();
   expect(component).toMatchSnapshot();

@@ -6,11 +6,7 @@ import AudioPlayer from './AudioPlayer';
 function createNodeMock(element) {
   if (element.type === `audio`) {
     return {
-      src: ``,
-      oncanplaythrough: () => {},
-      onplay: () => {},
-      onpause: () => {},
-      ontimeupdate: () => {}
+      oncanplaythrough: () => {}
     };
   }
   return null;

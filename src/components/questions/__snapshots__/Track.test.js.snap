@@ -5,7 +5,9 @@ exports[`Track component renders correctly 1`] = `
   className="track"
 >
   <button
-    className="track__button track__button--play"
+    className="track__button track__button--pause"
+    disabled={true}
+    onClick={[Function]}
     type="button"
   />
   <div
@@ -19,15 +21,15 @@ exports[`Track component renders correctly 1`] = `
     <input
       checked={true}
       className="game__input visually-hidden"
-      id="answer-0"
+      id="answer-1"
       name="answer"
       onChange={[MockFunction]}
       type="checkbox"
-      value={0}
+      value={1}
     />
     <label
       className="game__check"
-      htmlFor="answer-0"
+      htmlFor="answer-1"
     >
       Отметить
     </label>

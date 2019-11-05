@@ -14,7 +14,16 @@ it(`Track component renders correctly`, () => {
           src={`abc`}
           onChoose={jest.fn()}
           onPlayButtonClick={jest.fn()}
-        />)
+        />, {
+          createNodeMock(element) {
+            if (element.type === `audio`) {
+              return {
+                oncanplaythrough: () => {}
+              };
+            }
+            return null;
+          }
+        })
     .toJSON();
   expect(component).toMatchSnapshot();
 });

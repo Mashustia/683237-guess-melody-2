@@ -17,7 +17,16 @@ it(`GuessArtist component renders correctly`, () => {
         ]
       }}
       onAnswer={jest.fn()}
-    />)
+    />, {
+      createNodeMock(element) {
+        if (element.type === `audio`) {
+          return {
+            oncanplaythrough: () => {}
+          };
+        }
+        return null;
+      }
+    })
     .toJSON();
   expect(component).toMatchSnapshot();
 });
